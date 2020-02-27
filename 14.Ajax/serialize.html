@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="divtest">
+        <div class="title">
+            <span class="fl">我的个人资料</span>
+            <span class="fr">
+                <input id="btnAction" type="button" value="序列化" />
+            </span>
+        </div>
+        <form action="">
+            <ul>
+                <li>姓名：<input name="Text1" type="text" size="12" /></li>
+                <li>
+                    <select name="Select1">
+                        <option value="0">男</option>
+                        <option value="1">女</option>
+                    </select>
+                </li>
+                <li><input name="Checkbox1" type="checkbox"/>资料是否可见 </li>
+                <li id="litest"></li>
+            </ul>
+        </form>
+    </div>
+</body>
+<script>
+    $("#btnAction").on("click",function () {
+        $("#litest").html($("form").serialize())
+    })
+</script>
+</html>

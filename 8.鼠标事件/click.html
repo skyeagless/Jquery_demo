@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>click</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        .test2 {
+            background: #bbffaa;
+        }
+        .test3 {
+            background: yellow;
+        }
+        .test2,.test3{
+            border: 1px solid red;
+        }
+    </style>
+</head>
+<body>
+    <h2>.click()方法</h2>
+    <h4>测试一</h4>
+    <button>元素绑定事件,弹出回调中的this</button>
+    <br/>
+    <br/>
+    <h4>测试二</h4>
+    <div class="test2">
+        <p>666</p>
+    </div>
+    <button>指定触发事件</button>
+    <br/>
+    <br/>
+    <h4>测试三</h4>
+    <div class="test3">
+        <p>dfasfsadfsafsafas</p>
+    </div>
+    <button>不同函数传递数据</button>
+</body>
+<script>
+    //$ele.click( handler(eventObject) )
+    $("button:first").click(function () {
+        alert(this)
+    });
+    $('p').click(function (e) {
+        alert(e.target.textContent)
+    });
+    $("button:eq(1)").click(function () {
+        $('p').click()
+    });
+    function data(e) {
+       alert(e.data)
+    }
+    function a() {
+        $("button:last").click(1111,data)
+    }
+    a()
+    //$ele.click( [eventData ], handler(eventObject) )
+    //dbclick,mousedown/mouseup相似
+    //mousemove: mousemove事件是当鼠标指针移动时触发的，即使是一个像素
+    //  focusin(focus)/focusout(blur): input元素获得焦点，比如点击聚焦的时候触发这个事件
+    //focus()在元素本身产生，focusin()在元素包含的元素中产生,建议使用focus/blur
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html()及.text()</title>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>.html()与.text()</h3>
+    <div class="left first-div">
+        <div class="div">
+            <a>1</a>
+            <a>2</a>
+            <a>3</a>
+        </div>
+        <div class="div">
+            <a>4</a>
+            <a>5</a>
+            <a>6</a>
+        </div>
+    </div>
+
+    <h4>显示通过html方法获取到的内容(html文档结构)</h4>
+    <p></p>
+
+    <h4>显示通过text方法获取到的内容(.text()结果返回一个字符串，包含所有匹配元素的合并文本)</h4>
+    <p></p>
+</body>
+<script>
+    console.log($(".first-div").html());
+    console.log($(".first-div").text());
+
+    $('p:first').text($(".first-div").html());
+    $('p:last').text($('.first-div').text());
+    // $(".left div:first").html("替换整个div节点");
+    // $(".left a:first").text("替换文本内容");
+    // $(".left a:first").text(function (index,text) {
+    //     return '增加新的文本内容'+text
+    // })
+</script>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This选择器</title>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h2>特殊选择器this</h2>
+    <p id="test">点击测试：通过原生jQuery处理</p>
+</body>
+<!--this，表示当前的上下文对象是一个html对象，
+可以调用html对象所拥有的属性和方法。
+$(this),代表的上下文对象是一个jquery的上下文对象，
+可以调用jQuery的方法和属性值。-->
+<script type="text/javascript">
+    $("#test").click(function () {
+        var $this = $(this);
+        $this.css("color","red");
+    })
+    //通过把$()方法传入当前的元素对象的引用this，
+    // 把这个this加工成jQuery对象，我们就可以用jQuery提供的快捷方法直接处理样式了
+</script>
+</html>

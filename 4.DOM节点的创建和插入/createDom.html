@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>创建DOM节点</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        .left,
+        .right {
+            width: 300px;
+            height: 120px;
+        }
+        .left div,
+        .right div {
+            width: 100px;
+            height: 90px;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            border: 1px solid #ccc;
+        }
+        .left div {
+            background: #bbffaa;
+        }
+        .right div {
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h2>动态创建元素节点</h2>
+    <button>点击通过jQuery动态创建元素节点</button>
+</body>
+<script>
+    var $body = $("body");
+    $body.on("click",function () {
+        //通过jquery生成div元素节点
+        var div = $("<div class='right'>" +
+                        "<div class='arron'>动态创建div元素节点" +
+                        "</div>" +
+                   "</div>");
+        $body.append(div);
+    })
+</script>
+</html>

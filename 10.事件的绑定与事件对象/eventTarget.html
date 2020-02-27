@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>事件对象的使用</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        .left div,
+        .right div {
+            width: 500px;
+            height: 100px;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            border: 1px solid #ccc;
+        }
+
+        .left div {
+            background: #bbffaa;
+        }
+
+        .right div {
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+<h3>事件委托，通过事件对象区别触发元素</h3>
+    <div class="left">
+        <div class="aaron">
+            <ul>
+                <li>点击：触发一</li>
+                <li>点击：触发二</li>
+                <li>点击：触发三</li>
+                <li>点击：触发四</li>
+            </ul>
+        </div>
+    </div>
+</body>
+<script>
+    //event.target代表当前触发事件的元素，可以通过当前元素对象的一系列
+    // 属性来判断是不是我们想要的元素
+    $("ul").on("click",function (e) {
+        alert(e.target.textContent)
+    })
+
+    /**
+     * 事件对象e的属性和方法：
+     * 1. event.type ---事件类型
+     * 2. event.pageX --- 鼠标相对于页面的坐标
+     * 3. event.preventDefault() 阻止默认行为
+     * 4. event.stopPropagation()阻止事件向DOM上冒泡
+     * 5. event.which 标准化鼠标单击
+     * 6. event.currentTarget == this Dom
+     * 7. event.target不完全等同于this，不会冒泡，只接受事件的目标DOM元素
+     * 8. this-->$(this)  event.target --> $(event.target)  dom-->jquery
+     *
+     */
+
+</script>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Submit</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        .left div,
+        .right div {
+            width: 500px;
+            height: 50px;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            border: 1px solid #ccc;
+        }
+
+        .left div {
+            background: #bbffaa;
+        }
+
+        .right div {
+            background: yellow;
+        }
+
+        select {
+            height: 100px;
+        }
+    </style>
+</head>
+<body>
+    <h2>submit</h2>
+    <div class="left">
+        <div class="aaron">
+            <form id="target1" action="test.html">
+                回车键或者点击提交表单：
+                <input type="text" value="输入新的值" />
+                <input type="submit" value="Go" />
+            </form>
+        </div>
+        <div class="aaron">
+            <form id="target2" action="destination.html">
+                回车键或者点击提交表单,禁止浏览器默认跳转：
+                <input type="text" value="输入新的值" />
+                <input type="submit" value="Go" />
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    $('#target1').submit(function(e) {
+        alert('捕获提交表达动作,不阻止页面跳转')
+    });
+    //回车键或者点击提交表单,禁止浏览器默认跳转：
+    $('#target2').submit(function() {
+        alert('捕获提交表达动作,阻止页面跳转')
+        return false;
+    });
+//form元素是有默认提交表单的行为，如果通过submit处理的话，需要禁止浏览器的这个默认行为
+//传统的方式是调用事件对象  e.preventDefault() 来处理， jQuery中可以直接在函数中最后结尾return false即可
+</script>
+</html>

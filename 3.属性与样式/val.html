@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Val</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        p {
+            color: red;
+            margin: 4px;
+        }
+        b {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h3>.val()相关知识</h3>
+
+    <select id="single">
+        <option>慕课网</option>
+        <option>博客园</option>
+    </select>
+    <select id="multiple" multiple="multiple">
+        <option selected="selected">imocc</option>
+        <option>慕课网</option>
+        <option selected="selected">博客园</option>
+    </select>
+    <input type="text" value="click a button" />
+    <p></p>
+</body>
+<script>
+    // $("p").text($("#single").val())
+    // $("p").text($("#multiple").val()) //数组
+    $("input[type='text']").val("修改表单的字段");
+    //,而.val()只能使用在表单元素上；
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ID选择器</title>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+<body>
+    <div id="a">
+        <p>id="a"</p>
+        <p>选中</p>
+    </div>
+    <div id="imooc">
+        <p>id="imooc"</p>
+        <p>选中</p>
+    </div>
+    <div id="imooc1">
+        <p>id="imooc1"</p>
+        <p>选中</p>
+    </div>
+</body>
+<script>
+    var $a = $("#imooc1");
+    $a.css('border',"3px solid red");
+</script>
+</html>

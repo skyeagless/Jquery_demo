@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        .left {
+            width: auto;
+            height: 200px;
+        }
+        .left div {
+            width: 350px;
+            height: 150px;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            background: #bbffaa;
+            border: 1px solid #ccc;
+        }
+        span {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h2>closest方法()</h2>
+    <div class="left first-div">
+        <div class="div">
+            <ul class="level-2">
+                <li class="item-a">A</li>
+                <li class="item-b">B
+                    <ul class="level-3">
+                        <li class="item-1">1</li>
+                        <li class="item-2">2</li>
+                        <li class="item-3">3</li>
+                    </ul>
+                </li>
+                <li class="item-c">C</li>
+            </ul>
+        </div>
+    </div>
+    <br/>
+    <button>closest传递选择器</button>
+    <button>closest传递一个元素对象</button>
+</body>
+<script>
+    //closest()在当前的元素就起效，相当于大于或等于，并且找到一个相匹配的元素就停止搜索,
+    //parents（）从父级开始起效，相当于大于，可以匹配多个结果。
+    $("button:first").click(function () {
+        $("li.item-1").closest(".level-2").css("border",'1px solid blue')
+    });
+    $("button:last").click(function () {
+        var $itemB = $(".item-b")
+        $('li.item-1').closest($itemB).css("border",'1px solid blue')
+    })
+</script>
+</html>

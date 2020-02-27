@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KeyDown</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        .left div,
+        .right div {
+            width: 500px;
+            height: 50px;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            border: 1px solid #ccc;
+        }
+
+        .left div {
+            background: #bbffaa;
+        }
+        em{
+            font-weight: 900;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>keydown()与keyup()事件</h2>
+    <div class="left">
+        <h4>测试一</h4>
+        <div class="aaron">监听keydown输入:
+            <input class="target1" type="text" value="" /><br />
+            按下显示输入的值:<em></em>
+        </div>
+
+        <h4>测试二</h4>
+        <div class="aaron">监听keyup输入:
+            <input class="target2" type="text" value="" /><br />
+            松手显示输入的值:<em></em>
+        </div>
+
+        <h4>测试三</h4>
+        <div class="aaron">监听keyPress输入:
+            <input class="target3" type="text" value="" /><br />
+            显示输入的值:<em></em>
+        </div>
+    </div>
+</body>
+<script>
+    $(".target1").keydown(function (e) {
+        $("em:first").html(e.target.value);
+    });
+    //使用keyUp更好
+    $('.target2').keyup(function(e) {
+        $("em:eq(1)").text(e.target.value)
+    });
+    $('.target3').keypress(function(e) {
+        $("em:last").text(e.target.value)
+    });
+</script>
+</html>

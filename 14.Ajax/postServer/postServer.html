@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getScript方法异步加载js数据</title>
+    <script src="../../jquery-3.4.1.js"></script>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="divtest">
+        <div class="title">
+            <span class="fl">检测数字是否大于0</span>
+            <span class="fr"><input id="btnCheck" type="button" value="检测" /></span>
+        </div>
+        <ul>
+            <li>请求输入一个数字 <input id="txtNumber" type="text" size="12" /></li>
+        </ul>
+    </div>
+</body>
+<script>
+    $("#btnShow").on("click",function () {
+        //data是从php回调回来的
+        $.post("check_f.php",{name:$("#txtNumber").val()},function (data) {
+            $("ul").append("<li>你输入的<b>"+ $("#txtNumber").val() + "</b>是<b>" +
+            data + "</b></li>");
+        });
+    })
+</script>
+</html>

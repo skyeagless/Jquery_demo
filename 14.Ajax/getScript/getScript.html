@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>getScript方法异步加载js数据</title>
+    <script src="../../jquery-3.4.1.js"></script>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+    <div id="divtest">
+        <div class="title">
+            <span class="fl">我最喜欢的运动</span>
+            <span class="fr">
+                        <input id="btnShow" type="button" value="加载" />
+                    </span>
+        </div>
+        <ul></ul>
+    </div>
+</body>
+<script>
+    $("#btnShow").on("click",function () {
+        var $this = $(this);
+        $.getScript("sport_f.js",function (data) {
+            $this.attr("disabled","true")
+        })
+    })
+</script>
+</html>

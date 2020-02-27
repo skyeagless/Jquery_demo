@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hover</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        .left div,
+        .right div {
+            width: 350px;
+            height: 150px;
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid #ccc;
+        }
+
+        p {
+            height: 50px;
+            border: 1px solid red;
+            margin: 30px;
+        }
+
+        .left div {
+            background: #bbffaa;
+        }
+
+    </style>
+</head>
+<body>
+    <h2>.hover()方法</h2>
+    <div class="left">
+        <div class="aaron1">
+            <p>触发hover事件</p>
+        </div>
+    </div>
+</body>
+<script>
+   $("p").hover(function () {
+        $(this).css('background','red');
+   },function () {
+        $(this).css('background',"yellow")
+   })
+</script>
+</html>

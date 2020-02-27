@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery对象转化成DOM对象</title>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+<body>
+    <div>元素1</div>
+    <div>元素2</div>
+    <div>元素3</div>
+</body>
+<script type="text/javascript">
+   var $div = $("div");//jquery对象
+    var div = $div[1];//dom对象，使用数组下标读取到jquery中的dom对象
+    div.style.color = 'red';
+</script>
+</html>

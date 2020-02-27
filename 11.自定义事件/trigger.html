@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trigger</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        .left div,
+        .right div {
+            width: 500px;
+            height: 50px;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            border: 1px solid #ccc;
+        }
+        .left div {
+            background: #bbffaa;
+        }
+        .right div {
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h2>自定义事件trigger</h2>
+    <div class="left">
+        <div>点击次数:<span></span><span>0</span></div>
+        <button>直接点击</button>
+        <button>通过自定义点击</button>
+    </div>
+</body>
+<script>
+//$('#elem').trigger('Aaron',['参数1','参数2']) 事件名字就叫Aaron
+    $("button:first").click(function (e,buttonName) {
+        buttonName = buttonName || '第一个按钮';
+        update($('span:first'),$('span:last'),buttonName);
+    });
+
+    //使用了第一个按钮的参数buttonName,第一个参数是事件名
+    $("button:last").click(function () {
+        $("button:first").trigger('click','第二个按钮');
+    });
+
+    function update(param1,param2,buttonName) {
+        param1.text(buttonName);
+        var n = parseInt(param2.text(), 10);
+        param2.text(n + 1);
+    }
+
+</script>
+</html>

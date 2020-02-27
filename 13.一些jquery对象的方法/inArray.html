@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        p {
+            color: red;
+        }
+        div{
+            width:200px;
+            height: 100px;
+            background-color: yellow;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <h2>inArray方法</h2>
+    <div id="aaron"></div>
+    点击观察结果：
+    <select id="animation">
+        <option value="1">inArray1</option>
+        <option value="2">inArray2</option>
+    </select>
+    <input id="exec" type="button" value="执行动画">
+</body>
+<script>
+    $("#exec").click(function () {
+        var v = $("#animation").val();
+        console.log(v);
+        var $aaron = $("#aaron");
+        $aaron.empty();
+        if(v == "1"){
+            var index0 = $.inArray('pp',['test','Aaron','pp']);
+            $aaron.text("pp的索引是:"+index0)
+        }
+        else if(v == "2"){
+            var index = $.inArray('a',['a','b','c','d','a','c'],2);
+            $aaron.text('a的索引是: '+ index)
+        }
+    })
+
+</script>
+</html>

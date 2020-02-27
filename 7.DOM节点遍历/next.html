@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        .left {
+            width: auto;
+            height: 200px;
+        }
+        .left div {
+            width: 350px;
+            height: 150px;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            background: #bbffaa;
+            border: 1px solid #ccc;
+        }
+        span {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+<h2>next方法()</h2>
+<div class="left first-div">
+    <div class="div">
+        <ul class="level-2">
+            <li class="item-a">A</li>
+            <li class="item-b">B
+                <ul class="level-3">
+                    <li class="item-1">1</li>
+                    <li class="item-2">2</li>
+                    <li class="item-3">3</li>
+                </ul>
+            </li>
+            <li class="item-c">C</li>
+        </ul>
+    </div>
+</div>
+<br/>
+<button>next无参数</button>
+<button>next传递表达式</button>
+</body>
+<script>
+    //通过next匹配合集中每一个元素的下一个兄弟元素,prev是next的反
+    $("button:first").click(function () {
+        $(".item-1").next().css("border",'1px solid blue')
+    });
+    $("button:last").click(function () {
+        $(".item-2").next(':last').css("border",'1px solid orange')
+    })
+</script>
+</html>

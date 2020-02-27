@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>层级选择器</title>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h2>子选择器与后代选择器</h2>
+    <div class="left">
+        <div class="aaron">
+            <p>div下的第一个p元素</p>
+        </div>
+        <div class="aaron">
+            <p>div下的第一个p元素</p>
+        </div>
+    </div>
+    <div class="right">
+        <div class="imooc">
+            <article>
+                <p>div下的article下的p元素</p>
+            </article>
+        </div>
+        <div class="imooc">
+            <article>
+                <p>div下的article下的p元素</p>
+            </article>
+        </div>
+    </div>
+
+    <h2>相邻兄弟选择器和一般兄弟选择器</h2>
+    <div class="bottom">
+        <div>兄弟节点div, +~选择器不能向前选择</div>
+        <span class="prev">span元素</span>
+        <div>span后第一个兄弟节点div</div>
+        <div>兄弟节点div
+            <div class="small">子元素div</div>
+        </div>
+        <span>兄弟节点span</span>
+        <div>兄弟节点div</div>
+    </div>
+
+</body>
+<script type="text/javascript">
+    //子选择器 后代选择器 相邻兄弟选择器 一般兄弟选择器
+
+    //1.$('div > p') 选择所有div元素里面的子元素P
+    // $('div > p').css('border','1px groove red');
+
+    //2.$('div p') 选择所有div元素里面的后代元素P
+    // $('div p').css('border','1px groove yellow');
+
+    //3.选取prev后面的第一个的div兄弟节点
+    // $(".prev+div").css("border","3px groove blue");
+
+    //4.选取prev后面的所有div兄弟节点
+    $(".prev ~ div").css("border","3px groove blue");
+
+</script>
+</html>

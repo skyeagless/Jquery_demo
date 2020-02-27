@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hide_and_Show</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        .left div,
+        .right div {
+        width: 100%;
+        height: 50px;
+        padding: 5px;
+        margin: 5px;
+        float: left;
+        border: 1px solid #ccc;
+        }
+        .left div {
+        background: #bbffaa;
+        }
+        .right div {
+        background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h4>测试一</h4>
+    <div id="a2">hide/show动画操作</div>
+    <button>hide/show带动画</button>
+</body>
+<script>
+    $("button").click(function () {
+        $("#a2").toggle(3000);
+        // hide(3000).show(3000);
+            // duration: 3000,
+            // complete:function () {
+            //     alert("执行3s动画完毕")
+            // }
+        });
+    // })
+    /**
+     * toggle方法:
+     * 如果元素是最初显示，它会被隐藏。如果是隐藏的，它会显示出来
+    * */
+</script>
+</html>

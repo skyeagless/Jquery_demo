@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM内部插入prepend()</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        .aaron1{
+            border: 1px solid red;
+        }
+        .aaron1 p {
+            color: red;
+        }
+        .aaron2{
+            border: 1px solid blue;
+        }
+        .aaron2 p {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h2>通过prepend添加元素</h2>
+    <button id="bt1">点击通过jQuery的prepend添加元素</button>
+    <div class="aaron1">
+        <p>测试prepend</p>
+    </div>
+</body>
+<script>
+    $("#bt1").on("click",function () {
+        $(".aaron1").prepend("<p>prepend增加的p元素</p>")
+    })
+</script>
+</html>

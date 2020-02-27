@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--    triggerHandler不会在DOM上冒泡,若要触发通过 jQuery 绑定的事件处理函数，-->
+<!--    而不触发原生的事件，使用.triggerHandler() 来代替-->
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h2>自定义事件triggerHandler</h2>
+    <div class="left">
+        <div id="accident">
+            <a href="#">triggerHandler事件</a>
+            <input type="text">
+        </div>
+        <button>事件冒泡,触发浏览器默认聚焦行为</button><br><br>
+        <button>不会冒泡，不触发浏览器默认聚焦行为</button>
+    </div>
+</body>
+<script>
+    $("input").on("focus",function (e,title) {
+        $(this).val(title);//向表单里填充数据
+    });
+
+    $("#accident").on('click',function () {
+        alert("trigger触发的事件会在 DOM 树中向上冒泡");
+    });
+
+    $("button:first").click(function () {
+        $("a").trigger("click");
+        $("input").trigger("focus");
+    });
+
+    $("button:last").click(function() {
+        $("a").triggerHandler("click");
+        $("input").triggerHandler("focus","没有触发默认聚焦事件");
+    });
+
+</script>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Jquery操作属性</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        input {
+            display    : block;
+            margin     : 10px;
+            padding    : 10px;
+            background : #bbffaa;
+            border     : 1px solid #ccc;
+        }
+    </style>
+</head>
+<body>
+    <h2>.attr()与.removeAttr()</h2>
+    <h3>.attr</h3>
+    <form>
+        <input type="text" value="设置value" />
+        <input type="text" value="获取value"/>
+        <input type="text" value="回调拼接value" />
+        <input type="text" value="删除value" />
+    </form>
+</body>
+<script>
+    $("input:first").attr('value','666');
+    console.log($("input:eq(1)").attr("value"));
+    $("input:eq(2)").attr('value',function (i,val) {
+        return '通过function设置'+ val;
+    });
+    $("input:eq(3)").removeAttr("value");
+</script>
+</html>

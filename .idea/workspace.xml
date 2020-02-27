@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="8c0aa37a-a490-4fb0-ac44-84194c2e83d4" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FavoritesManager">
+    <favorites_list name="jquery_test" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="CSS File" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1Y6QGLkRuL3As4eQROUiji4D4Os" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/14.Ajax/getServer" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\Learning resources\vuejs_test\jquery_test\14.Ajax\postServer" />
+      <recent name="E:\Learning resources\vuejs_test\jquery_test\14.Ajax\getServer" />
+      <recent name="E:\Learning resources\vuejs_test\jquery_test\14.Ajax\getScript" />
+      <recent name="E:\Learning resources\vuejs_test\jquery_test\14.Ajax\load" />
+      <recent name="E:\Learning resources\vuejs_test\jquery_test\14.Ajax" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\Learning resources\vuejs_test\jquery_test\14.Ajax\getServer" />
+      <recent name="E:\Learning resources\vuejs_test\jquery_test\2.选择器" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="8c0aa37a-a490-4fb0-ac44-84194c2e83d4" name="Default Changelist" comment="" />
+      <created>1582260466301</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1582260466301</updated>
+      <workItem from="1582260467670" duration="23783000" />
+      <workItem from="1582347352142" duration="972000" />
+      <workItem from="1582348335342" duration="20899000" />
+      <workItem from="1582439671330" duration="1560000" />
+      <workItem from="1582448646773" duration="7277000" />
+      <workItem from="1582466193351" duration="7000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="937" y="239" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1582261005542">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="937" y="239" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.824@0.0.1536.824" timestamp="1582261005542" />
+    <state x="548" y="153" key="FileChooserDialogImpl" timestamp="1582264504161">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="548" y="153" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1582264504161" />
+    <state x="926" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1582360330394">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="926" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1582360330394" />
+  </component>
+</project>

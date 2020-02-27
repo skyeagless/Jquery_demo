@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>增加样式addClass</title>
+    <style>
+        .left,
+        .right {
+            width: 300px;
+            height: 120px;
+        }
+        .left div,
+        .right div {
+            width: 100px;
+            height: 90px;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            border: 1px solid #ccc;
+        }
+        .newClass{
+            background: #bbffaa;
+        }
+        .imoocClass{
+            background: red;
+        }
+
+    </style>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h2>.addClass()方法</h2>
+    <div class="left">
+        <div class="aaron">
+            <p>newClass</p>
+        </div>
+        <div class="aaron">
+            <p>newClass</p>
+        </div>
+    </div>
+    <div class="right">
+        <div class="aa bb imooc">
+            <article>
+                <p>imoocClass</p>
+            </article>
+        </div>
+        <div class="bb cc imooc ">
+            <article>
+                <p>imoocClass</p>
+            </article>
+        </div>
+    </div>
+</body>
+    <script type="text/javascript">
+        $(".left div").addClass("newClass");
+        $("div").addClass(function (index,className) {
+            if(className.indexOf("imooc") !== -1){
+                //this指向匹配元素集合中的当前元素
+                $(this).addClass("imoocClass");
+            }
+        })
+    </script>
+</html>

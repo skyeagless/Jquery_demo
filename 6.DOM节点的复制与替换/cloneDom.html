@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>clone()克隆节点</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        .left,
+        .right {
+            width: 300px;
+            height: 120px;
+        }
+        .left div,
+        .right div {
+            width: 100px;
+            height: 90px;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            border: 1px solid #ccc;
+            background: #bbffaa;
+        }
+    </style>
+</head>
+<body>
+    <h2>通过clone克隆元素</h2>
+    <div class="left">
+        <div class="aaron1">点击,clone浅拷贝</div>
+        <div class="aaron2">点击,clone深拷贝,可以继续触发创建</div>
+    </div>
+</body>
+<script>
+    //只克隆节点，不克隆事件
+    $(".aaron1").on("click",function () {
+        $(".left").append($(this).clone().css("color","red"));
+    });
+    //克隆节点和事件
+    $(".aaron2").on("click",function () {
+        $(".left").append($(this).clone(true).css("color","blue"))
+    })
+</script>
+</html>

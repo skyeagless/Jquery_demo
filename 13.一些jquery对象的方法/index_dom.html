@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM元素获取的get方法</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        a {
+            font-size: 30px;
+            font-weight: 900;
+        }
+    </style>
+</head>
+<body>
+    <h2>index方法</h2>
+    <ul>
+        <a></a>
+        <a></a>
+        <li id="test1">1</li>
+        <li id="test2">2</li>
+        <li id="test3">3</li>
+    </ul>
+    <ul>
+        <li id="test4">4</li>
+        <li id="test5">5</li>
+        <li id="test6">6</li>
+    </ul>
+    <select id="animation">
+        <option value="1">index无参数</option>
+        <option value="2">index传递dom</option>
+        <option value="3">index传递jQuery对象</option>
+    </select>
+    <input id="exec" type="button" value="点击执行">
+    <br />
+    <br /> 索引结果：
+    <span></span>
+</body>
+<script>
+    $("#exec").click(function() {
+        var v = $("#animation").val();
+        var $span = $("span");
+        if(v == '1'){
+            $span.text($("li").index())
+        }else if(v == '2'){
+            $span.text($("li").index(document.getElementById("test2")));
+        }else if(v == '3'){
+            $span.text($("li").index($("#test2")));
+        }
+    });
+    // .index() 返回值就是传入的元素相对于原先集合的位置
+    //如果参数是一个选择器， .index() 返回值就是原先元素相对于选择器匹配元素的位置。如果找不到匹配的元素，则 .index() 返回 -1
+    // 2 1 1
+</script>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>css操作</title>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+<body>
+    <h3>获取css属性</h3>
+    <div class="first">获取颜色</div>
+    <p></p>
+    <div class="second">获取文字尺寸</div>
+    <p></p>
+    <div class="third">获取宽高尺寸</div>
+    <p></p>
+    </br></br></br>
+    <h3>设置css属性</h3>
+    <div class="fourth">设置颜色设置文字尺寸</div>
+    <div class="fifth">设置颜色设置文字尺寸</div>
+    <div class="sixth">通过回调设置新的值</div>
+    <div class="seventh">同时设置多少个样式</div>
+</body>
+<script>
+    $('p:first').text($(".first").css("background-color"));
+    $('p:eq(1)').text($(".first").css("font-size"));
+    var value = $('.first').css(['width','height']);
+    $('p:eq(2)').text("width: "+ value.width+" height: "+value.height);
+
+    $('.fourth').css("backgroundColor",'red');
+    $('.fifth').css("font-size",'25px');
+    $('.sixth').css("font-size",function(index,value){
+        value = parseInt(value);
+        return value + 20 + 'px';
+    });
+    $('.seventh').css({
+        'font-size'        :"15px",
+        "background-color" :"#40E0D0",
+        "border"           :"1px solid red"
+    })
+</script>
+</html>

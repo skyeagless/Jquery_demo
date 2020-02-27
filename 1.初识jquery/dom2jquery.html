@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM对象转化成jQuery对象</title>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+<body>
+    <div>元素一</div>
+    <div>元素二</div>
+    <div>元素三</div>
+</body>
+<script>
+    //通过$(dom)方法将普通的dom对象加工成jQuery对象之后，我们就可以调用jQuery的方法了
+    var div = document.getElementsByTagName('div');//dom
+    var $div = $(div);//jquery
+    var $first = $div.first();
+    $first.css('color','red');
+</script>
+</html>

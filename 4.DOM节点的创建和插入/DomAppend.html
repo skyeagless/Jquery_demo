@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM内部插入append()与appendTo()</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        .content {
+            width: 300px;
+        }
+        .append{
+            background-color: blue;
+        }
+        .appendTo{
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>通过append与appendTo添加元素</h2>
+    <button id="bt1">点击通过jQuery的append添加元素</button>
+    <button id="bt2">点击通过jQuery的appendTo添加元素</button>
+
+    <div class="content"></div>
+</body>
+<script>
+//append()前面是被插入的对象，后面是要在对象内插入的元素内容
+//appendTo()前面是要插入的元素内容，而后面是被插入的对象
+    $("#bt1").on("click",function () {
+        $(".content").append("<div class='append'>" +
+                                "通过append方法添加的元素"+
+                            "</div>")
+    });
+
+    $("#bt2").on("click",function () {
+        $('<div class="appendTo">通过appendTo方法添加的元素</div>').appendTo($(".content"))
+    });
+
+</script>
+</html>

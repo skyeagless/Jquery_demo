@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM元素获取的get方法</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        a {
+
+            font-size: 30px;
+            font-weight: 900;
+        }
+        div {
+            width: 200px;
+            height: 100px;
+            background-color: yellow;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h2>get方法</h2>
+
+    <div id="aaron">
+        <a>1</a>
+        <a>2</a>
+        <a>3</a>
+        <a>4</a>
+        <a>5</a>
+    </div>
+    <select id="animation">
+        <option value="1">get正数索引参数</option>
+        <option value="2">get负数索引参数</option>
+    </select>
+    <input id="exec" type="button" value="点击执行">
+</body>
+<script>
+    $("#exec").click(function() {
+        var v = $("#animation").val();
+        var $aaron = $("#aaron a");//获得所有a子节点
+
+        //通过get找到第二个a元素，并修改蓝色字体
+        if (v == "1") {
+            $aaron.get(1).style.color = "blue"
+        } else if (v == "2") {
+            //通过get找到最后一个a元素，并修改字体颜色
+            $aaron.get(-1).style.color = "#8A2BE2"
+        }
+    });
+</script>
+</html>

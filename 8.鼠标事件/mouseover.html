@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>mouseover</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        .left div,
+        .right div {
+            width: 350px;
+            height: 150px;
+            padding: 5px;
+            margin: 5px;
+            border: 1px solid #ccc;
+        }
+        p{
+            height: 50px;
+            border: 1px solid red;
+            margin: 30px;
+        }
+        .left div {
+            background: #bbffaa;
+        }
+        .right div {
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h4>测试</h4>
+    <div class="left">
+        <div class="aaron1">
+            <p>鼠标移进此区域触发mouseover事件</p>
+            <a>4</a>
+        </div>
+    </div>
+</body>
+<script>
+   var n = 0;
+   $(".aaron1 p:first").mouseover(function () {
+        $(".aaron1 a").html("进入元素内部,mouseover事件触发次数："+ (++n));
+   })
+   //mouseenter:基本类似于mouseover，但是jquery建议使用mouseenter
+    //mouseenter事件只会在绑定它的元素上被调用，而不会在后代节点上被触发
+</script>
+</html>

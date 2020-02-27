@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Change</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        .left div,
+        .right div {
+            width: 100%;
+            padding: 5px;
+            margin: 5px;
+            float: left;
+            border: 1px solid #ccc;
+        }
+
+        .left div {
+            background: #bbffaa;
+        }
+
+        .right div {
+            background: yellow;
+        }
+    </style>
+</head>
+<body>
+    <h2>input、textarea与select</h2>
+    <div class="left">
+        <div class="aaron">input：
+            <input class="target1" type="text" value="监听input的改变" />
+        </div>
+        <div class="aaron1">select：
+            <select class="target2">
+                <option value="option1" selected="selected">Option 1</option>
+                <option value="option2">Option 2</option>
+            </select>
+        </div>
+        <div class="aaron3">textarea：
+            <textarea class="target3" rows="3" cols="20">多行的文本输入控件</textarea>
+        </div>
+    </div>
+    输出结果
+    <div id="result"></div>
+</body>
+<script>
+    $(".target1").change(function (e) {
+        $("#result").html(e.target.value)
+    });
+    //监听select：
+    $(".target2").change(function(e) {
+        $("#result").html(e.target.value)
+    });
+
+    //监听textarea：e.target指的是触发事件的节点
+    $(".target3").change(function(e) {
+        $("#result").html(e.target.value)
+    })
+
+    //select: 当textarea和文本中的input元素被选择时，发生select事件
+    //select事件只能用于<input>元素与<textarea>元素
+
+</script>
+</html>

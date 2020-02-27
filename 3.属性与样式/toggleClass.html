@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ToggleClass切换样式</title>
+    <style type="text/css">
+        body,
+        table,
+        td{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+        }
+        .h {
+            background: #f3f3f3;
+            color: #000;
+        }
+        .c {
+            background: blue;
+            color: #000;
+        }
+    </style>
+    <script src="../jquery-3.4.1.js"></script>
+</head>
+<body>
+    <table id="table" width="50%" border="0" cellpadding="3" cellspacing="1">
+        <tr>
+            <td>慕课jQuery入门</td>
+            <td>慕课jQuery入门</td>
+        </tr>
+        <tr>
+            <td>慕课jQuery入门</td>
+            <td>慕课jQuery入门</td>
+        </tr>
+        <tr>
+            <td>慕课jQuery入门</td>
+            <td>慕课jQuery入门</td>
+        </tr>
+        <tr>
+            <td>慕课jQuery入门</td>
+            <td>慕课jQuery入门</td>
+        </tr>
+        <tr>
+            <td>慕课jQuery入门</td>
+            <td>慕课jQuery入门</td>
+        </tr>
+    </table>
+</body>
+<script>
+    //toggleClass是一个互斥的逻辑，
+    // 也就是通过判断对应的元素上是否存在指定的Class名，
+    // 如果有就删除，如果没有就增加
+    $("#table tr").toggleClass("c")
+    $("#table tr:odd").toggleClass("c")
+</script>
+</html>

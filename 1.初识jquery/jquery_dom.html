@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery对象与DOM对象</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            //通过$('#imooc')方法会得到一个$p的jQuery对象，
+            // $p是一个类数组对象。这个对象里面包含了DOM对象的信息，然后封装了很多操作方法
+            var $p = $("#imooc");
+            $p.html("您好").css("color","red");
+        })
+    </script>
+</head>
+<body>
+    <p id="imooc"></p>
+</body>
+</html>

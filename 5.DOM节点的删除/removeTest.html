@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM节点删除之remove()的基本用法</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        div {
+            background: #bbffaa;
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+    <h2>通过jQuery remove方法移除元素</h2>
+    <div class="test1">
+        <p>p元素1</p>
+        <p>p元素2</p>
+    </div>
+    <div class="test2">
+        <p>p元素3</p>
+        <p>p元素4</p>
+    </div>
+    <button>通过点击jQuery的remove移除元素</button>
+    <button>通过点击jQuery的remove移除指定元素</button>
+</body>
+<script>
+    $("button:first").on('click',function () {
+        //remove与empty一样，都是移除元素的方法，
+        // 但是remove会将元素自身移除，同时也会移除元素内部的一切，包括绑定的事件及与该元素相关的jQuery数据。
+        $(".test1").remove();
+    });
+
+    $("button:last").on("click",function () {
+        $("p").remove(":contains('3')")
+    });
+
+    /**
+     * 严格地讲，empty()法并不是删除节点，而是清空节点，它能清空元素中的所有后代节点
+     empty不能删除自己本身这个节点
+
+     remove方法将该节点与该节点所包含的所有后代节点将同时被删除
+     提供传递一个筛选的表达式，删除指定合集中的元素
+     * */
+</script>
+</html>

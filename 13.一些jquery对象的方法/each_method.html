@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Base</title>
+    <script src="../jquery-3.4.1.js"></script>
+    <style>
+        p {
+            color: red;
+        }
+        div{
+            width:200px;
+            height: 100px;
+            background-color: yellow;
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <h2>each方法</h2>
+    <div id="aaron"></div>
+    点击观察结果：
+    <select id="animation">
+        <option value="1">each数组</option>
+        <option value="2">each对象</option>
+    </select>
+    <input id="exec" type="button" value="执行动画">
+</body>
+<script>
+    $("#exec").click(function () {
+        var v = $("#animation").val();
+        var $aaron = $("#aaron");
+        $aaron.empty();
+        if(v == "1"){
+            $.each(['abc','xyz'],function (index,item) {
+                $aaron.append("索引:"+index+" 元素:"+item);
+            });
+        }else if(v == "2"){
+            $.each({
+                name:"SkyEagle", age:25
+            },function (property,value) {
+                $aaron.append("属性名:"+property+" 元素:"+value);
+            })
+        }
+    })
+</script>
+</html>
